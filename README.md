@@ -46,7 +46,6 @@ EchoCare is an advanced AI-powered web application designed to support dementia 
 - **Icons**: Lucide React
 - **Build Tool**: Vite
 - **AI Integration**: Custom webhook endpoints
-- **Deployment**: InfinityFree (Free Hosting)
 
 ## 📦 Installation
 
