@@ -2,6 +2,9 @@
 
 **EchoCare** is an AI-powered web app built to support people with dementia and their caregivers. It converts spoken or written daily routines into organized to-do lists, enabling better memory support, improved communication, and task management.
 
+🔗 **Live Site:** [https://echocare.rf.gd](https://echocare.rf.gd)
+
+
 ## 🌟 Features
 
 - 🎤 **Voice Input Support** – Speak your day, and let AI extract key tasks.
