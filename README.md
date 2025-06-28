@@ -28,9 +28,6 @@
 - Web Speech API (Voice recognition)
 - JSON Webhook Integration
 
-
-  ![image](https://github.com/user-attachments/assets/187d5d68-18a0-4598-8de1-e154d7843f11)
-
 ## 📦 Installation
 
 ```bash
@@ -39,4 +36,5 @@ cd echocare
 npm install
 npm run dev
 
+![image](https://github.com/user-attachments/assets/cfa1dc87-d893-4f06-ad9f-86e66ec59b1c)
 
