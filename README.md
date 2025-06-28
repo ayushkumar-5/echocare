@@ -4,7 +4,9 @@
 
 EchoCare is an advanced AI-powered web application designed to support dementia patients and their caregivers through intelligent task management, natural language processing, and comprehensive care coordination.
 
-![EchoCare Screenshot](screenshot.png)
+![EchoCare Screenshot](https://github.com/user-attachments/assets/3c0b944c-a267-49b4-a8c1-2265668074ec)
+
+🔗 **Live Site:** [https://echocare.rf.gd](https://echocare.rf.gd)
 
 ## 🚀 Features
 
