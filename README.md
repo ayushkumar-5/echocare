@@ -1,9 +1,10 @@
-# 🧠 EchoCare
+![image](https://github.com/user-attachments/assets/3a4a62d1-7a0d-4876-ac0c-1acf820e9f4c)# 🧠 EchoCare
 
 **EchoCare** is an AI-powered web app built to support people with dementia and their caregivers. It converts spoken or written daily routines into organized to-do lists, enabling better memory support, improved communication, and task management.
 
 
-![image](https://github.com/user-attachments/assets/173495d3-f07e-47c5-99a0-57293689b9bc)
+![image](https://github.com/user-attachments/assets/3c0b944c-a267-49b4-a8c1-2265668074ec)
+
 
 
 
