@@ -71,24 +71,6 @@ EchoCare is an advanced AI-powered web application designed to support dementia 
    http://localhost:5173
    ```
 
-## 🚀 Deployment
-
-### InfinityFree Deployment
-
-1. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-2. **Upload to InfinityFree**
-   - Create account at [infinityfree.net](https://infinityfree.net)
-   - Upload contents of `dist/` folder to `htdocs`
-   - Include the `.htaccess` file for proper routing
-
-3. **Access your deployed site**
-   - Your site will be available at your InfinityFree subdomain
-   - Example: `echocare.infinityfreeapp.com`
-
 ## 📱 Usage
 
 ### For Patients
