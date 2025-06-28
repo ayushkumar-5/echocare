@@ -1,5 +1,5 @@
 # EchoCare - AI-Powered Dementia Care Assistant
-
+ 
 > Over 55 million people live with dementia — and counting. EchoCare is here to help.
 
 EchoCare is an advanced AI-powered web application designed to support dementia patients and their caregivers through intelligent task management, natural language processing, and comprehensive care coordination.
