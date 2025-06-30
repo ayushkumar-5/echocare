@@ -80,7 +80,7 @@ export class NLPTaskExtractor {
     try {
       let aiTasks: any[] = [];
       let aiSummary = '';
-
+      
       // NEW FORMAT: [{ output: '```json\n[ ... ]\n```' }]
       if (Array.isArray(aiResult) && aiResult.length > 0 && aiResult[0].output) {
         const outputStr = aiResult[0].output;

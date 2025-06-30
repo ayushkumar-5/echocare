@@ -19,6 +19,7 @@ import {
 import NLPTaskProcessor from './components/NLPTaskProcessor';
 import CaregiverDashboard from './components/CaregiverDashboard';
 import { ExtractedTask, TaskDatabase } from './services/nlpService';
+import logo from './image/logotext_poweredby_360w.png';
 
 function App() {
   const [demoTasks, setDemoTasks] = useState([
@@ -198,12 +199,14 @@ function App() {
                 Demo
               </button>
             </nav>
-            <button 
-              onClick={handleStartDemo}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            <a 
+              href="https://bolt.new/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black p-2 rounded-lg transition-transform transform hover:scale-105 inline-block"
             >
-              Start Free
-            </button>
+              <img src={logo} alt="Powered by Bolt" className="h-8" />
+            </a>
           </div>
         </div>
       </header>
@@ -353,7 +356,7 @@ function App() {
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-              <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+              <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-6">
                 <Users className="h-6 w-6 text-orange-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Caregiver Dashboard</h3>

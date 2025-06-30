@@ -199,14 +199,14 @@ const CaregiverDashboard: React.FC<CaregiverDashboardProps> = ({
             <Sparkles className="h-4 w-4" />
             Show Summary
           </button>
-          <button
-            onClick={() => setShowAddForm(!showAddForm)}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
-          >
-            <Plus className="h-4 w-4" />
-            Add Task
-          </button>
-        </div>
+        <button
+          onClick={() => setShowAddForm(!showAddForm)}
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+        >
+          <Plus className="h-4 w-4" />
+          Add Task
+        </button>
+      </div>
       </div>
 
       {/* Emergency Contact Section */}
@@ -462,126 +462,126 @@ const CaregiverDashboard: React.FC<CaregiverDashboardProps> = ({
 
       {/* Tasks List (when not in calendar view) */}
       {filter !== 'calendar' && (
-        <div className="space-y-3">
-          {filteredTasks.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              <Calendar className="h-12 w-12 mx-auto mb-3 opacity-50" />
-              <p>No tasks match the current filter.</p>
-            </div>
-          ) : (
-            filteredTasks.map((task) => (
-              <div
-                key={task.id}
-                className={`border rounded-lg p-4 transition-all ${
-                  task.completed 
-                    ? 'bg-green-50 border-green-200' 
-                    : task.priority === 'high'
-                    ? 'bg-red-50 border-red-200'
-                    : 'bg-white border-gray-200 hover:border-blue-300'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <button
-                    onClick={() => onTaskUpdate(task.id, { completed: !task.completed })}
-                    className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-                      task.completed
-                        ? 'bg-green-500 border-green-500 text-white'
-                        : 'border-gray-300 hover:border-blue-500'
-                    }`}
-                  >
-                    {task.completed && <CheckCircle2 className="h-4 w-4" />}
-                  </button>
+      <div className="space-y-3">
+        {filteredTasks.length === 0 ? (
+          <div className="text-center py-8 text-gray-500">
+            <Calendar className="h-12 w-12 mx-auto mb-3 opacity-50" />
+            <p>No tasks match the current filter.</p>
+          </div>
+        ) : (
+          filteredTasks.map((task) => (
+            <div
+              key={task.id}
+              className={`border rounded-lg p-4 transition-all ${
+                task.completed 
+                  ? 'bg-green-50 border-green-200' 
+                  : task.priority === 'high'
+                  ? 'bg-red-50 border-red-200'
+                  : 'bg-white border-gray-200 hover:border-blue-300'
+              }`}
+            >
+              <div className="flex items-start gap-3">
+                <button
+                  onClick={() => onTaskUpdate(task.id, { completed: !task.completed })}
+                  className={`flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
+                    task.completed
+                      ? 'bg-green-500 border-green-500 text-white'
+                      : 'border-gray-300 hover:border-blue-500'
+                  }`}
+                >
+                  {task.completed && <CheckCircle2 className="h-4 w-4" />}
+                </button>
 
-                  <div className="flex-1">
-                    {editingTask === task.id ? (
-                      <div className="space-y-3">
-                        <input
-                          type="text"
-                          value={editText}
-                          onChange={(e) => setEditText(e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                          onKeyPress={(e) => e.key === 'Enter' && handleEditSave(task.id)}
-                        />
-                        <div className="flex gap-2">
+                <div className="flex-1">
+                  {editingTask === task.id ? (
+                    <div className="space-y-3">
+                      <input
+                        type="text"
+                        value={editText}
+                        onChange={(e) => setEditText(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        onKeyPress={(e) => e.key === 'Enter' && handleEditSave(task.id)}
+                      />
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEditSave(task.id)}
+                          className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700"
+                        >
+                          Save
+                        </button>
+                        <button
+                          onClick={handleEditCancel}
+                          className="bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-400"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <p className={`font-medium ${task.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
+                          {task.text}
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityBadge(task.priority)}`}>
+                            {task.priority}
+                          </span>
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                            {task.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      {task.timeContext && (
+                        <div className="flex items-center gap-1 text-sm text-gray-600 mb-2">
+                          <Clock className="h-4 w-4" />
+                          <span>{task.timeContext}</span>
+                        </div>
+                      )}
+
+                      <div className="flex items-center justify-between">
+                        <button
+                          onClick={() => setShowOriginalText(
+                            showOriginalText === task.id ? null : task.id
+                          )}
+                          className="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1"
+                        >
+                          {showOriginalText === task.id ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
+                          {showOriginalText === task.id ? 'Hide' : 'Show'} original
+                        </button>
+
+                        <div className="flex gap-1">
                           <button
-                            onClick={() => handleEditSave(task.id)}
-                            className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700"
+                            onClick={() => handleEditStart(task)}
+                            className="p-2 text-gray-400 hover:text-blue-600 transition-colors"
                           >
-                            Save
+                            <Edit3 className="h-4 w-4" />
                           </button>
                           <button
-                            onClick={handleEditCancel}
-                            className="bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-400"
+                            onClick={() => onTaskDelete(task.id)}
+                            className="p-2 text-gray-400 hover:text-red-600 transition-colors"
                           >
-                            Cancel
+                            <Trash2 className="h-4 w-4" />
                           </button>
                         </div>
                       </div>
-                    ) : (
-                      <>
-                        <div className="flex items-start justify-between gap-2 mb-2">
-                          <p className={`font-medium ${task.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
-                            {task.text}
+
+                      {showOriginalText === task.id && (
+                        <div className="mt-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                          <p className="text-xs text-gray-600 italic">
+                            Original: "{task.extractedFrom}"
                           </p>
-                          <div className="flex items-center gap-2">
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getPriorityBadge(task.priority)}`}>
-                              {task.priority}
-                            </span>
-                            <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
-                              {task.category}
-                            </span>
-                          </div>
                         </div>
-
-                        {task.timeContext && (
-                          <div className="flex items-center gap-1 text-sm text-gray-600 mb-2">
-                            <Clock className="h-4 w-4" />
-                            <span>{task.timeContext}</span>
-                          </div>
-                        )}
-
-                        <div className="flex items-center justify-between">
-                          <button
-                            onClick={() => setShowOriginalText(
-                              showOriginalText === task.id ? null : task.id
-                            )}
-                            className="text-xs text-gray-500 hover:text-gray-700 flex items-center gap-1"
-                          >
-                            {showOriginalText === task.id ? <EyeOff className="h-3 w-3" /> : <Eye className="h-3 w-3" />}
-                            {showOriginalText === task.id ? 'Hide' : 'Show'} original
-                          </button>
-
-                          <div className="flex gap-1">
-                            <button
-                              onClick={() => handleEditStart(task)}
-                              className="p-2 text-gray-400 hover:text-blue-600 transition-colors"
-                            >
-                              <Edit3 className="h-4 w-4" />
-                            </button>
-                            <button
-                              onClick={() => onTaskDelete(task.id)}
-                              className="p-2 text-gray-400 hover:text-red-600 transition-colors"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </div>
-
-                        {showOriginalText === task.id && (
-                          <div className="mt-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                            <p className="text-xs text-gray-600 italic">
-                              Original: "{task.extractedFrom}"
-                            </p>
-                          </div>
-                        )}
-                      </>
-                    )}
-                  </div>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
-            ))
-          )}
-        </div>
+            </div>
+          ))
+        )}
+      </div>
       )}
     </div>
   );
